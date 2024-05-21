@@ -102,7 +102,10 @@ function Navbar() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
-              <button className="px-3 bg-white/10 h-full rounded-r-2xl">
+              <button
+                className="px-3 bg-white/10 h-full rounded-r-2xl"
+                onClick={() => navigate(`/search?q=${search}`)}
+              >
                 <GoSearch size={22} />
               </button>
             </div>
