@@ -34,6 +34,10 @@ function Search() {
     refetch();
   }, [search, refetch]);
 
+  useEffect(() => {
+    window.scrollTo({ behavior: "smooth", top: 0, left: 0 });
+  }, []);
+
   return (
     <div className="flex items-start sm:gap-3 sm:flex-row flex-col h-full">
       <div className="lg:w-[270px] sm:w-[100px] w-full h-[50px] sm:h-[calc(100vh-50px)] sm:sticky top-[50px]">

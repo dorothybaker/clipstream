@@ -102,7 +102,9 @@ function Video() {
     },
   });
 
-  console.log(recommended);
+  useEffect(() => {
+    window.scrollTo({ behavior: "smooth", top: 0, left: 0 });
+  }, []);
 
   return (
     <div className="sm:px-6 sm:py-4 sm:pb-4 pb-1 flex items-start sm:gap-4 gap-3 max-w-[1400px] w-full mx-auto lg:flex-row flex-col">
@@ -173,7 +175,7 @@ function Video() {
                   </span>
                 </div>
               </div>
-              {!isMyVideo && (
+              {user && !isMyVideo && (
                 <button
                   className={`text-sm uppercase ${
                     isPending

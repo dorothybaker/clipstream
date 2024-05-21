@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import Card from "../components/Card";
 import Menu from "../components/Menu";
 import { API } from "../utils/makeRequest";
+import { useEffect } from "react";
 
 function Subscriptions() {
   const { data: videos, isLoading } = useQuery({
@@ -20,6 +21,10 @@ function Subscriptions() {
       }
     },
   });
+
+  useEffect(() => {
+    window.scrollTo({ behavior: "smooth", top: 0, left: 0 });
+  }, []);
 
   return (
     <div className="flex items-start sm:gap-3 sm:flex-row flex-col">

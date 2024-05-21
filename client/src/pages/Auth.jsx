@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Menu from "../components/Menu";
 import Login from "../components/auth/Login";
 import Register from "../components/auth/Register";
@@ -6,6 +6,10 @@ import Register from "../components/auth/Register";
 function Auth() {
   const [login, setLogin] = useState(true);
   const [register, setRegister] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo({ behavior: "smooth", top: 0, left: 0 });
+  }, []);
 
   return (
     <div className="flex items-start sm:gap-3 sm:flex-row flex-col">
