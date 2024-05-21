@@ -1,6 +1,7 @@
 import moment from "moment";
 import { useRef, useState } from "react";
 import formatNumber from "../utils/formatNumber";
+import { useNavigate } from "react-router-dom";
 
 function RecommendCard({ recommend }) {
   const videoEl = useRef(null);
@@ -12,8 +13,14 @@ function RecommendCard({ recommend }) {
 
     setDuration(video.duration);
   };
+
+  const navigate = useNavigate();
+
   return (
-    <div className="flex sm:items-center gap-2 sm:flex-row flex-col">
+    <div
+      className="flex sm:items-center gap-2 sm:flex-row flex-col cursor-pointer"
+      onClick={() => navigate(`/videos/${recommend._id}`)}
+    >
       <div className="flex-1">
         <video
           src={recommend.videoUrl}
